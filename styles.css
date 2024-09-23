@@ -1,0 +1,140 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #1c92d2, #f2fcfe); /* Fondo dinámico */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: auto; /* Permitir desplazamiento */
+}
+
+.container {
+    text-align: center;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    max-height: 90vh; /* Limitar la altura del contenedor */
+    overflow-y: auto; /* Permitir desplazamiento vertical */
+}
+
+input[type="text"], input[type="password"] {
+    width: 90%; /* Ancho del 90% */
+    padding: 12px; /* Aumento de padding para más espacio */
+    border: 2px solid #1c92d2; /* Borde color azul */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño de fuente */
+    margin-bottom: 20px; /* Espacio entre campos */
+    transition: border-color 0.3s; /* Transición suave */
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+    border-color: #0b5c84; /* Color del borde al hacer foco */
+    outline: none; /* Sin borde adicional al hacer foco */
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.candidate-card img {
+    width: 200px; /* Ancho de las imágenes */
+    height: 200px; /* Altura de las imágenes */
+    border-radius: 50%; /* Bordes redondeados */
+    object-fit: cover; /* Mantener la relación de aspecto */
+    transition: transform 0.3s; /* Transición suave para el zoom */
+    cursor: pointer; /* Cambiar el cursor al pasar sobre la imagen */
+}
+
+.candidate-card img:hover {
+    transform: scale(1.1); /* Aumentar el tamaño de la imagen al pasar el cursor */
+}
+
+.candidate-card {
+    background-color: #f8f9fa;
+    border-radius: 10px; /* Bordes más redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+    padding: 20px; /* Aumentar el padding */
+    margin-bottom: 30px; /* Aumentar el margen inferior */
+    text-align: center;
+    max-width: 220px; /* Limitar el ancho máximo de la tarjeta */
+    margin: auto; /* Centrar la tarjeta */
+}
+
+.column {
+    width: 45%; /* Cada columna ocupa el 45% del ancho */
+    display: flex;
+    flex-direction: column; /* Alinear las tarjetas verticalmente */
+    align-items: center; /* Centrar las tarjetas horizontalmente */
+}
+
+.candidate-card h4 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.candidate-card input[type="radio"] {
+    margin-top: 10px;
+    transform: scale(1.2); /* Aumenta el tamaño del botón de radio */
+}
+
+button {
+    background-color: #1c92d2;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0b5c84;
+}
+
+#copyButton {
+    margin-top: 20px;
+}
+
+#result {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    display: none; /* Se oculta inicialmente */
+}
+
+#result h3 {
+    color: #0b5c84;
+    font-size: 20px;
+}
+
+#result p {
+    color: #333;
+    font-size: 16px;
+}
+
+.zoomed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+}
+
+.zoomed-img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px; /* Opcional: agregar bordes redondeados */
+}
